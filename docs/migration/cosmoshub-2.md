@@ -5,8 +5,8 @@ must take in order to upgrade from `cosmoshub-2` to `cosmoshub-3`. The Tendermin
 will post an official updated genesis file, but it is recommended that validators
 execute the following instructions in order to verify the resulting genesis file.
 
-There is a strong social consensus around proposal [PLACEHOLDER] on `cosmoshub-2`.
-This indicates that the upgrade procedure should be performed on [PLACEHOLDER] on block [PLACEHOLDER].
+There is a strong ATOM staker consensus around [Proposal 19](https://hubble.figment.network/cosmos/chains/cosmoshub-2/governance/proposals/19), [Cosmos Hub 3 Upgrade Proposal E](https://ipfs.io/ipfs/QmfJyd64srJSX824WoNnF6BbvF4wvPGqVBynZeN98C7ygq) on `cosmoshub-2`.
+This indicates that the upgrade procedure should be performed on or around December 11, 2019 at Block Height 2,902,000.
 
   - [Preliminary](#preliminary)
   - [Major Updates](#major-updates)
@@ -84,11 +84,11 @@ v0.34.6+ of the _Cosmos SDK_ and restore to their latest snapshot before restart
 __Note__: It is assumed you are currently operating a full-node running v0.34.6+ of the _Cosmos SDK_.
 
 - The version/commit hash of Gaia v2.0.3: `2f6783e298f25ff4e12cb84549777053ab88749a`
-- The upgrade height as agreed upon by governance: **[PLACEHOLDER]**
+- The upgrade height as agreed upon by governance: **2902000**
 - You may obtain the canonical UTC timestamp of the exported block by any of the following methods:
-  - Block explorer (e.g. [Hubble](https://hubble.figment.network/cosmos/chains/cosmoshub-2/blocks/[PLACEHOLDER]?format=json&kind=block))
-  - Through manually querying an RPC node (e.g. `/block?height=[PLACEHOLDER]`)
-  - Through manually querying a Gaia REST client (e.g. `/blocks/[PLACEHOLDER]`)
+  - Block explorer (e.g. [Hubble](https://hubble.figment.network/cosmos/chains/cosmoshub-2/blocks/2902000?format=json&kind=block))
+  - Through manually querying an RPC node (e.g. `/block?height=2902000`)
+  - Through manually querying a Gaia REST client (e.g. `/blocks/2902000`)
 
 1. Verify you are currently running the correct version (v0.34.6+) of the _Cosmos SDK_:
 
@@ -111,7 +111,7 @@ __Note__: It is assumed you are currently operating a full-node running v0.34.6+
    Before exporting state via the following command, the `gaiad` binary must be stopped!
 
    ```shell
-   $ gaiad export --for-zero-height --height=[PLACEHOLDER] > cosmoshub_2_genesis_export.json
+   $ gaiad export --for-zero-height --height=2902000 > cosmoshub_2_genesis_export.json
    ```
 
 3. Verify the SHA256 of the (sorted) exported genesis file:
@@ -152,8 +152,8 @@ v2.0.3 of [Gaia](https://github.com/cosmos/gaia).
    **NOTE**: The `migrate` command takes an input genesis state and migrates it to a targeted version.
    Both v0.36 and v0.37 are compatible as far as state structure is concerned.
 
-   Genesis time should be computed relative to the blocktime of [PLACEHOLDER]. The genesis time shall be
-   the blocktime of [PLACEHOLDER] + [PLACEHOLDER] minutes with the subseconds truncated.
+   Genesis time should be computed relative to the blocktime of 2902000. The genesis time shall be
+   the blocktime of 2902000 + 60 minutes with the subseconds truncated.
 
    An example shell command(tested on OS X Mojave) to compute this values is:
 
